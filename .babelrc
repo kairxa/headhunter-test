@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "react",
+    "es2017",
+    "es2015"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "development": {
+      "sourceMaps": "inline"
+    }
+  }
+}
