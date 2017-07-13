@@ -4,10 +4,7 @@ import { createSelector } from 'reselect';
 export const GET_TIMELINE_SUCCESS = 'GET_TIMELINE_SUCCESS';
 export const GET_TIMELINE_FAILED = 'GET_TIMELINE_FAILED';
 
-/**
- * Return dispatch function with specific actions.
- */
-export default () => async (dispatch) => { // action
+export default () => async (dispatch) => {
   try {
     const url = 'http://localhost:3000/timeline';
 
@@ -31,14 +28,6 @@ export default () => async (dispatch) => { // action
   }
 };
 
-/**
- * Basic reducer with the following data format:
- * {
- *  type: string,
- *  payload: Immutable{},
- *  errorMessage: string,
- * }
- */
 export const getHomeTimelineReducer = (state = {
   type: '',
   payload: [],
@@ -67,16 +56,6 @@ export const getHomeTimelineReducer = (state = {
 
 const getHomeTimelinePayload = state => state.payload;
 
-/**
- * Returned data is expected in this format:
- * {
- *  timeline: timeline[]
- * }
- *
- * So to get the nicely returned array, components using this must
- * refer to timeline explicitly
- * (i.e. getHomeTimelineSelector(state.getHomeTimeline).timeline).
- */
 export const getHomeTimelineSelector = createSelector(
   [getHomeTimelinePayload],
   timelinePayload => timelinePayload,

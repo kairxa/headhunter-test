@@ -4,10 +4,7 @@ import { createSelector } from 'reselect';
 export const GET_TWEET_SUCCESS = 'GET_TWEET_SUCCESS';
 export const GET_TWEET_FAILED = 'GET_TWEET_FAILED';
 
-/**
- * Return dispatch function with specific actions.
- */
-export default tweetId => async (dispatch) => { // action
+export default tweetId => async (dispatch) => {
   try {
     const url = `http://localhost:3000/single/${tweetId}`;
 
